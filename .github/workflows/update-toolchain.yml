@@ -1,0 +1,29 @@
+name: Update Dependencies
+
+on:
+  schedule:
+    - cron: '0 8 */2 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update-dependencies
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: leanprover-community/lean-update@main
+        with:
+          build_args: Transmog TransmogTest --wfail
+          on_update_succeeds: pr
+          on_update_fails: issue

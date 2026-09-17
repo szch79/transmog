@@ -1,0 +1,16 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages":
+ [{"url": "https://github.com/szch79/hazel.git",
+   "type": "git",
+   "subDir": null,
+   "scope": "",
+   "rev": "537c04fecd782636f883a733993f126292e76189",
+   "name": "hazel",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "v4.35.0-rc2",
+   "inherited": false,
+   "configFile": "lakefile.lean"}],
+ "name": "transmog",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}
